@@ -1,0 +1,26 @@
+{
+  "name": "assign_09",
+  "version": "1.0.0",
+  "description": "A web application that will determine the postage required for a single piece of retail first-class mail.",
+  "engines": {
+    "node": "13.10.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/semadenipaul/Node-CS313.git"
+  },
+  "license": "MIT"
+}
