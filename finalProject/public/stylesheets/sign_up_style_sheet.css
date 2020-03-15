@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+
+.item1 {
+    grid-area: header;
+}
+
+.item2 {
+    grid-area: menu_bar;
+}
+
+.item3 {
+    grid-area: pictures;
+}
+
+.item4 {
+    grid-area: info;
+}
+
+.item5 {
+    grid-area: footer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'header header header header' 'menu_bar menu_bar menu_bar menu_bar' 'pictures pictures pictures pictures' 'info info info info' 'footer footer footer footer';
+    grid-gap: 5px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.grid-container>div, form {
+    background-color: white;
+    text-align: center;
+    color: black;
+    font-family: 'Cabin Sketch', cursive;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.grid-container>.item1 {
+    text-align: center;
+    color: black;
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 30px;
+}
+
+body {
+    background-color: black;
+}
+
+.item2 {
+    overflow: hidden;
+    background-color: black;
+}
+
+.item2 li {
+    display: block;
+}
+
+.item2 a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.item2 a:hover {
+    background-color: black;
+    zoom: 1.1;
+    color: white;
+    border-radius: 5px;
+}
+
+.item3 input {
+    font-size: 1.1em;
+    font-family: 'Cabin Sketch', cursive;
+}
+
+.item3 button {
+    color: white;
+    font-size: 1.1em;
+    font-family: 'Cabin Sketch', cursive;
+    background-color: black;
+}

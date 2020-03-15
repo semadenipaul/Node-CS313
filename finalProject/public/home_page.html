@@ -1,0 +1,64 @@
+<!--<?php
+session_start();
+?>-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/home_page.css">
+    <title>National Parks</title>
+</head>
+
+<body>
+    <form action="" method="POST" class="grid-container">
+        <div class="item1">
+            <h1>Explore U.S. National Parks</h1>
+        </div>
+        <div class="item2">
+            <ul>
+                <li><a href="/">Home Page</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/sign_up">Sign Up</a></li>
+            </ul>
+        </div>
+        <div class="item3" id="stage">
+            <a href="../stylesheets/images/alaska.jpg"><img id="image1" src="../stylesheets/images/alaska.jpg" /></a>
+            <a href="../stylesheets/images/yosemite.jpg"><img id="image2" src="../stylesheets/images/yosemite.jpg" /></a>
+            <a href="../stylesheets/images/arcadia.jpg"><img id="image3" src="../stylesheets/images/arcadia.jpg" /></a>
+            <a href="../stylesheets/images/yellowstone.jpg"><img id="image4" src="../stylesheets/images/yellowstone.jpg" /></a>
+            <a href="../stylesheets/images/arches.jpg"><img id="image5" src="../stylesheets/images/arches.jpg" /></a>
+            <a href="../stylesheets/images/teton.gif"><img id="image6" src="../stylesheets/images/teton.gif" /></a>
+            <a href="../stylesheets/images/canyonlands.jpg"><img id="image7" src="../stylesheets/images/canyonlands.jpg" /></a>
+            <a href="../stylesheets/images/smokymtn.jpg"><img id="image8" src="../stylesheets/images/smokymtn.jpg" /></a>
+            <a href="../stylesheets/images/everglades.jpg"><img id="image9" src="../stylesheets/images/everglades.jpg" /></a>
+            <a href="../stylesheets/images/hawaii.jpg"><img id="image10" src="../stylesheets/images/hawaii.jpg" /></a>
+            <a href="../stylesheets/images/glacier.jpg"><img id="image11" src="../stylesheets/images/glacier.jpg" /></a>
+        </div>
+        <div class="item4"></div>
+        <div class="item5">
+            <p>| HomePage <br> <br>Created at Brigham Young University Idaho <br> February 11, 2020 &#169;</p>
+        </div>
+    </form>
+    <script>
+        // Original JavaScript code by Chirp Internet: www.chirp.com.au
+        // Please acknowledge use of this code by including this header.
+
+        window.addEventListener("DOMContentLoaded", function (e) {
+
+            var stage = document.getElementById("stage");
+            var fadeComplete = function (e) { stage.appendChild(arr[0]); };
+            var arr = stage.getElementsByTagName("a");
+            for (var i = 0; i < arr.length; i++) {
+                arr[i].addEventListener("animationend", fadeComplete, false);
+            }
+
+        }, false);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/login_style_sheet.css">
+    <title>| Login</title>
+</head>
+
+<body>
+    <form action="/validate" method="POST" class="grid-container">
+        <div class="item1">
+            <p style="text-align: left; font-size: 20px;">Explore U.S. National Parks</p>
+            <h1>Login</h1>
+        </div>
+        <div class="item2">
+            <ul>
+                <li><a href="/">Home Page</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/sign_up">Sign Up</a></li>
+            </ul>
+        </div>
+        <div class="item3">
+            <p>Username: <input type="text" name="username" required/></p>
+            <p>Password: <input type="password" name="password" required/></p>
+            <button type="submit" name="Submit" value="Submit!">Sign In</button><br>
+            <a href="/sign_up">Don't have an account?</a>
+        </div>
+        <div class="item4"></div>
+        <div class="item5"></div>
+    </form>
+</body>
+
+</html>
