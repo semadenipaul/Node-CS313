@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+.item0 {
+    grid-area: name;
+}
+
 .item1 {
     grid-area: header;
 }
@@ -24,7 +28,7 @@
 
 .grid-container {
     display: grid;
-    grid-template-areas: 'header header header header' 'menu_bar menu_bar menu_bar menu_bar' 'keywords keywords keywords keywords' 'info info info info' 'footer footer footer footer';
+    grid-template-areas: 'name name name name' 'header header header header' 'menu_bar menu_bar menu_bar menu_bar' 'keywords keywords keywords keywords' 'info info info info' 'footer footer footer footer';
     grid-gap: 5px;
     background-color: white;
     padding: 5px;
@@ -49,6 +53,12 @@
 
 body {
     background-color: black;
+}
+
+.item0 p {
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: -20px;
 }
 
 .item2 {

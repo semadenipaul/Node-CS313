@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +10,7 @@ session_start();
 </head>
 
 <body>
-    <form action="/validate" method="POST" class="grid-container">
+    <form action="/welcome" method="POST" class="grid-container">
         <div class="item1">
             <p style="text-align: left; font-size: 20px;">Explore U.S. National Parks</p>
             <h1>Login</h1>
@@ -27,8 +23,8 @@ session_start();
             </ul>
         </div>
         <div class="item3">
-            <p>Username: <input type="text" name="username" required/></p>
-            <p>Password: <input type="password" name="password" required/></p>
+            <p>Username: <input type="text" id="username" name="username" required /></p>
+            <p>Password: <input type="password" id="password" name="password" required /></p>
             <button type="submit" name="Submit" value="Submit!">Sign In</button><br>
             <a href="/sign_up">Don't have an account?</a>
         </div>
