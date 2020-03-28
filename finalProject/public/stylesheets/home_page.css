@@ -99,6 +99,9 @@ body {
 .item3 a img {
     border: 1px solid black;
     background: black;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
 .item3 a:nth-of-type(1) {

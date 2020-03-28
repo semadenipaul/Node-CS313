@@ -88,3 +88,7 @@ body {
     font-family: 'Cabin Sketch', cursive;
     background-color: black;
 }
+
+.item4 p {
+    color: red;
+}

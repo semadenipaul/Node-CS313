@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form action="/welcome" method="POST" class="grid-container">
+    <form action="/validateUser" method="POST" class="grid-container">
         <div class="item1">
             <p style="text-align: left; font-size: 20px;">Explore U.S. National Parks</p>
             <h1>Login</h1>
@@ -28,7 +28,7 @@
             <button type="submit" name="Submit" value="Submit!">Sign In</button><br>
             <a href="/sign_up">Don't have an account?</a>
         </div>
-        <div class="item4"></div>
+        <div class="item4" id="status" name="status"><p><%= error %></p></div>
         <div class="item5"></div>
     </form>
 </body>

@@ -4,12 +4,13 @@ const connectionString = process.env.DATABASE_URL || "postgres://dbdtgkttfjxodw:
 
 const pool = new Pool({ connectionString: connectionString });
 
+
 function login(req, res) {
 
     console.log("Validation is being called!!!!")
 
-    var username = req.body.username;
-    var password = req.body.password;
+    var username = req.session.username;
+    var password = req.session.password;
 
     getUserFromDB(username, function (error, result) {
 
@@ -35,6 +36,7 @@ function login(req, res) {
 
             res.render('login_index', params);
 
+            
         }
     });
 }
@@ -42,7 +44,6 @@ function login(req, res) {
 function getUserFromDB(username, callback) {
 
     console.log("Getting person from DataBase with username: " + username);
-
     const sql = "SELECT id, first_name, last_name, person_email, new_person, city, state FROM person WHERE USER_NAME = $1::VARCHAR";
 
     const params = [username];
