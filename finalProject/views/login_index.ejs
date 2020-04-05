@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form action="" method="POST" class="grid-container">
+    <form action="/createReview" method="GET" class="grid-container">
         <div class="item0">
             <p>Welcome back <%= fname %> <%= lname %>!</p>
         </div>
@@ -19,8 +19,8 @@
         </div>
         <div class="item2">
             <ul>
-                <li><a href="/">Home Page</a></li>
-                <li><a href="">Previous Trips</a></li>
+                <li><a href="/logout2Home">Home Page</a></li>
+                <!--<li><a href="/previousTrips">Previous Trips</a></li>-->
                 <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
@@ -88,7 +88,7 @@
                         var designation = response.designation;
                         var name = response.fullName;
                         var parkCode = response.parkCode;
-                        
+
                         document.getElementById('choosePark').innerHTML += "<li value='" + parkCode + " name='park' id='park'>" + name + " <button class='choose' type='button' value='" + parkCode + "'>Choose Park</button></li>";
                         //document.getElementById('choosePark').innerHTML += "<li>" + name + " -> " + parkCode + "</li>";
                         //}
@@ -107,6 +107,7 @@
         }
 
         function getPark(event) {
+
             var image;
             if (event.target.value) {
                 console.log("id= " + event.target.value);
@@ -127,7 +128,7 @@
                                 this.image = "../stylesheets/images/" + event.target.value + ".jpg";
                             }
 
-                            document.getElementById('getPark').innerHTML = "<h2>" + parkName + "</h2><br><img src='" + this.image + "' alt='An image of " + parkName + "'></img><br><p>" + description + "</p>";
+                            document.getElementById('getPark').innerHTML = "<h2>" + parkName + "</h2><br><img src='" + this.image + "' alt='An image of " + parkName + "'></img><br><p>" + description + "</p><br><p>Visited this National Park? <button type='submit' id='review' name='review' value='true'>Write a Review!</button></p>";
                         }
                     }
                 }
@@ -137,8 +138,8 @@
                 xhr.open("GET", url, true);
                 xhr.send();
             }
+            document.getElementById('getPark').style.visibility = "visible";
         }
-
     </script>
 </body>
 

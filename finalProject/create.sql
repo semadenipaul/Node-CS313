@@ -16,31 +16,9 @@ CREATE TABLE person
     state VARCHAR(100)
 );
 
-CREATE TABLE national_parks
-(
-    id SERIAL NOT NULL PRIMARY KEY,
-    national_park VARCHAR(200),
-    image   VARCHAR(500) NOT NULL,
-    us_state VARCHAR(200) NOT NULL,
-    nature1 VARCHAR(200) NOT NULL,
-    nature2 VARCHAR(200) NOT NULL,
-    activities1 VARCHAR(200) NOT NULL,
-    activities2 VARCHAR(200) NOT NULL,
-    activities3 VARCHAR(200) NOT NULL,
-    vacation_time INT NOT NULL
-);
-
-CREATE TABLE previous_parks_visited
-(
-    id SERIAL NOT NULL PRIMARY KEY,
-    person INT NOT NULL REFERENCES person(id),
-    national_parks INT NOT NULL REFERENCES national_parks(id),
-    UNIQUE (person, national_parks)
-);
-
 CREATE TABLE person_reviews
 (
     id SERIAL NOT NULL PRIMARY KEY,
-    previous_parks_visited INT NOT NULL REFERENCES previous_parks_visited(id),
+    person INT NOT NULL REFERENCES person(id),
     reviews_content TEXT
 );

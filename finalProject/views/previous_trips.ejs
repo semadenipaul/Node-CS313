@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/previous_trips_style_sheets.css">
+    <title>| Previous Trips</title>
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+        function showReview() {
+            var review = $("#review").val();
+
+            var params = { review: review };
+
+            $.get("/reviews", params, function (result) {
+                $("#thread").text(review).show();
+            });
+        }
+    </script>-->
+</head>
+
+<body>
+    <form action="/reviews" method="POST" class="grid-container">
+        <div class="item1">
+            <h1>Explore U.S. National Parks</h1>
+        </div>
+        <div class="item2">
+            <ul>
+                <li><a href="/logout2Home">Home Page</a></li>
+                <!--<li><a href="/welcome">Discover a National Park</a></li>-->
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+        <div class="item3">
+            <p>Hello <%= fname %>, Please Leave a Review!</p>
+            <p id="id" style="display:none"><%= id %></p>
+        </div>
+        <div class="item4" id="">
+            <textarea id="review" name="review" cols="100" rows="8"></textarea>
+            <br>
+            <button type="submit">Post Review</button>
+        </div>
+        <div class="item5" id="thread" name="thread"></div>
+    </form>
+</body>
+
+</html>

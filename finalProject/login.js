@@ -25,6 +25,9 @@ function login(req, res) {
             var objectValue = person;
 
             var id = objectValue['id'];
+            //console.log("ID = " + id);
+            //req.session.id = id;
+            //console.log("SESSION ID = " + req.session.id);
             var fname = objectValue['first_name'];
             var lname = objectValue['last_name'];
             var email = objectValue['person_email'];
@@ -36,7 +39,6 @@ function login(req, res) {
 
             res.render('login_index', params);
 
-            
         }
     });
 }

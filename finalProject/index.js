@@ -11,6 +11,8 @@ const pool = new Pool({ connectionString: connectionString });
 
 var app = express();
 
+var allow = require('./allow.js');
+var review = require('./postReview.js');
 var validate = require('./login.js');
 var register = require('./register.js');
 var verifyLogin = function (req, res, next) {
@@ -27,6 +29,7 @@ app.set('port', process.env.PORT || 5001)
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: false }))
   .use(express.static(__dirname + '/public'))
+  .use(express.json())
   .use(session({
     secret: 'do not reveal',
     resave: false,
@@ -56,11 +59,6 @@ app.set('port', process.env.PORT || 5001)
     pool.query(sql, params, function (err, result) {
       if (err || result == null) {
         console.log("Error in the pool");
-
-        //console.log("SQL = " + sql);
-        //console.log("ERR = " + err);
-        //console.log("result = " + result);
-        //console.log("RESULT.LENGTH = " + result.length);
 
         req.session.error = '** Incorrect username or password';
         return res.render('login', { error: req.session.error });
@@ -92,7 +90,16 @@ app.set('port', process.env.PORT || 5001)
       return res.redirect('/login');
     }
     return res.redirect('/welcome');
-    //res.json(json);
+  })
+
+  .get('/logout2Home', function (req, res) {
+    var json = { success: false };
+    if (req.session.username) {
+      req.session.destroy();
+      json.success = true;
+      return res.redirect('/');
+    }
+    return res.redirect('/welcome');
   })
 
   .get('/', function (req, res) {
@@ -101,13 +108,14 @@ app.set('port', process.env.PORT || 5001)
   })
 
   .get('/login', function (req, res) {
-    //console.log(req.session.username);
-    //console.log(req.session.password);
-    //console.log(req.session.error);
     req.session.error = '';
     res.render('login', { error: req.session.error });
     console.log('We are on the Login Page');
   })
+
+  .get('/createReview', allow.allow)
+
+  .post('/reviews', review.postReview)
 
   .get('/sign_up', function (req, res) {
     res.sendFile('sign_up.html', { root: __dirname + "/public" });

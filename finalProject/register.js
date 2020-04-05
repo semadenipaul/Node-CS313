@@ -18,7 +18,7 @@ async function register(req, res) {
         var newUser = 'true';
 
         console.log("Inserting " + fname + " " + lname + " into the database");
-        console.log("HashedPassword = " + hashedPassword);
+        //console.log("HashedPassword = " + hashedPassword);
 
         var sql = "INSERT INTO person (first_name, last_name, USER_NAME, password, person_email, new_person, city, state) VALUES ('"+ fname + "', '" + lname + "', '" + username + "', '" + hashedPassword + "', '" + email + "', '" + newUser + "', '" + city + "', '" + state + "')";
 

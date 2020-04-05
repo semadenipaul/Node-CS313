@@ -122,8 +122,19 @@ body {
     background-color: black;
 }
 
+.item5 {
+    visibility: hidden;
+}
+
 .item5>img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
+}
+
+.item5 button {
+    color: white;
+    font-size: 1.1em;
+    font-family: 'Cabin Sketch', cursive;
+    background-color: black;
 }

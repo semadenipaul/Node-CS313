@@ -96,6 +96,13 @@ body {
     background-color: black;
 }
 
+.item4 button {
+    color: white;
+    font-size: 1.1em;
+    font-family: 'Cabin Sketch', cursive;
+    background-color: black;
+}
+
 .hide {
     display: none;
 }
